@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import VK_ios_sdk
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -47,6 +48,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
 
-
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+        if let url = URLContexts.first?.url {
+            VKSdk.processOpen(url, fromApplication: UIApplication.OpenURLOptionsKey.sourceApplication.rawValue)
+        }
+    }
 }
 

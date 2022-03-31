@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C21A3C9832EEF1240A49CC2 /* Pods_TestMobileUp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A23E820A52A9AF898E13B520 /* Pods_TestMobileUp.framework */; };
+		64851E2C27F4A35900EC827E /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64851E2B27F4A35900EC827E /* PhotoViewController.swift */; };
+		64851E3027F4A63100EC827E /* PhotoController.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64851E2F27F4A63100EC827E /* PhotoController.swift.swift */; };
+		64851E3227F4A64200EC827E /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64851E3127F4A64200EC827E /* AuthController.swift */; };
+		64851E3727F59C0F00EC827E /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64851E3527F59C0F00EC827E /* PhotoCollectionViewCell.swift */; };
+		64851E3827F59C0F00EC827E /* PhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64851E3627F59C0F00EC827E /* PhotoCollectionViewCell.xib */; };
 		64F17F5A27F1CEAA0013B402 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F17F5927F1CEAA0013B402 /* AppDelegate.swift */; };
 		64F17F5C27F1CEAA0013B402 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F17F5B27F1CEAA0013B402 /* SceneDelegate.swift */; };
 		64F17F5E27F1CEAA0013B402 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F17F5D27F1CEAA0013B402 /* ViewController.swift */; };
@@ -16,6 +22,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		64851E2B27F4A35900EC827E /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		64851E2F27F4A63100EC827E /* PhotoController.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoController.swift.swift; sourceTree = "<group>"; };
+		64851E3127F4A64200EC827E /* AuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthController.swift; sourceTree = "<group>"; };
+		64851E3527F59C0F00EC827E /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		64851E3627F59C0F00EC827E /* PhotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCollectionViewCell.xib; sourceTree = "<group>"; };
 		64F17F5627F1CEAA0013B402 /* TestMobileUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestMobileUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64F17F5927F1CEAA0013B402 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		64F17F5B27F1CEAA0013B402 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +35,9 @@
 		64F17F6227F1CEAD0013B402 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		64F17F6527F1CEAD0013B402 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		64F17F6727F1CEAD0013B402 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		920CD87331199CEC2792D415 /* Pods-TestMobileUp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestMobileUp.release.xcconfig"; path = "Target Support Files/Pods-TestMobileUp/Pods-TestMobileUp.release.xcconfig"; sourceTree = "<group>"; };
+		A23E820A52A9AF898E13B520 /* Pods_TestMobileUp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestMobileUp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B60B1EFEDC8975665853E2F7 /* Pods-TestMobileUp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestMobileUp.debug.xcconfig"; path = "Target Support Files/Pods-TestMobileUp/Pods-TestMobileUp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +45,48 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C21A3C9832EEF1240A49CC2 /* Pods_TestMobileUp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3B2ACC2481C30728BC659C02 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A23E820A52A9AF898E13B520 /* Pods_TestMobileUp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		64851E2D27F4A60500EC827E /* AuthVIew */ = {
+			isa = PBXGroup;
+			children = (
+				64F17F5D27F1CEAA0013B402 /* ViewController.swift */,
+				64851E3127F4A64200EC827E /* AuthController.swift */,
+			);
+			path = AuthVIew;
+			sourceTree = "<group>";
+		};
+		64851E2E27F4A61200EC827E /* PhotoView */ = {
+			isa = PBXGroup;
+			children = (
+				64851E2B27F4A35900EC827E /* PhotoViewController.swift */,
+				64851E2F27F4A63100EC827E /* PhotoController.swift.swift */,
+				64851E3527F59C0F00EC827E /* PhotoCollectionViewCell.swift */,
+				64851E3627F59C0F00EC827E /* PhotoCollectionViewCell.xib */,
+			);
+			path = PhotoView;
+			sourceTree = "<group>";
+		};
 		64F17F4D27F1CEAA0013B402 = {
 			isa = PBXGroup;
 			children = (
 				64F17F5827F1CEAA0013B402 /* TestMobileUp */,
 				64F17F5727F1CEAA0013B402 /* Products */,
+				EF8730AEA222C1F22228BB3F /* Pods */,
+				3B2ACC2481C30728BC659C02 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +101,25 @@
 		64F17F5827F1CEAA0013B402 /* TestMobileUp */ = {
 			isa = PBXGroup;
 			children = (
+				64851E2E27F4A61200EC827E /* PhotoView */,
+				64851E2D27F4A60500EC827E /* AuthVIew */,
 				64F17F5927F1CEAA0013B402 /* AppDelegate.swift */,
 				64F17F5B27F1CEAA0013B402 /* SceneDelegate.swift */,
-				64F17F5D27F1CEAA0013B402 /* ViewController.swift */,
 				64F17F5F27F1CEAA0013B402 /* Main.storyboard */,
 				64F17F6227F1CEAD0013B402 /* Assets.xcassets */,
 				64F17F6427F1CEAD0013B402 /* LaunchScreen.storyboard */,
 				64F17F6727F1CEAD0013B402 /* Info.plist */,
 			);
 			path = TestMobileUp;
+			sourceTree = "<group>";
+		};
+		EF8730AEA222C1F22228BB3F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B60B1EFEDC8975665853E2F7 /* Pods-TestMobileUp.debug.xcconfig */,
+				920CD87331199CEC2792D415 /* Pods-TestMobileUp.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +129,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 64F17F6A27F1CEAD0013B402 /* Build configuration list for PBXNativeTarget "TestMobileUp" */;
 			buildPhases = (
+				E6329C26F51EF08364231017 /* [CP] Check Pods Manifest.lock */,
 				64F17F5227F1CEAA0013B402 /* Sources */,
 				64F17F5327F1CEAA0013B402 /* Frameworks */,
 				64F17F5427F1CEAA0013B402 /* Resources */,
+				46C0214FCBB3A06C751C4D3A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,6 +183,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				64F17F6627F1CEAD0013B402 /* LaunchScreen.storyboard in Resources */,
+				64851E3827F59C0F00EC827E /* PhotoCollectionViewCell.xib in Resources */,
 				64F17F6327F1CEAD0013B402 /* Assets.xcassets in Resources */,
 				64F17F6127F1CEAA0013B402 /* Main.storyboard in Resources */,
 			);
@@ -133,14 +191,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		46C0214FCBB3A06C751C4D3A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TestMobileUp/Pods-TestMobileUp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TestMobileUp/Pods-TestMobileUp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TestMobileUp/Pods-TestMobileUp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E6329C26F51EF08364231017 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TestMobileUp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		64F17F5227F1CEAA0013B402 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				64F17F5E27F1CEAA0013B402 /* ViewController.swift in Sources */,
+				64851E3227F4A64200EC827E /* AuthController.swift in Sources */,
+				64851E2C27F4A35900EC827E /* PhotoViewController.swift in Sources */,
 				64F17F5A27F1CEAA0013B402 /* AppDelegate.swift in Sources */,
+				64851E3727F59C0F00EC827E /* PhotoCollectionViewCell.swift in Sources */,
 				64F17F5C27F1CEAA0013B402 /* SceneDelegate.swift in Sources */,
+				64851E3027F4A63100EC827E /* PhotoController.swift.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,7 +320,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -270,7 +374,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -282,6 +386,7 @@
 		};
 		64F17F6B27F1CEAD0013B402 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B60B1EFEDC8975665853E2F7 /* Pods-TestMobileUp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -304,12 +409,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		64F17F6C27F1CEAD0013B402 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 920CD87331199CEC2792D415 /* Pods-TestMobileUp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -332,7 +438,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
