@@ -34,6 +34,7 @@ class CarouselViewController: UIViewController, CarouselViewControllerProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
+
         view.backgroundColor = .darkGray
     }
 
@@ -45,13 +46,21 @@ extension CarouselViewController: UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = bigCollectionView.dequeueReusableCell(withReuseIdentifier: "carouselCell", for: indexPath) as! CarouselCellCollectionViewCell
-        guard let imageURL = controller?.getOneImageFromAlbum(number: indexPath.row) else {
+        if collectionView == bigCollectionView {
+            let cell = bigCollectionView.dequeueReusableCell(withReuseIdentifier: "carouselCell", for: indexPath) as! CarouselCellCollectionViewCell
+            guard let imageURL = controller?.getOneImageFromAlbum(number: indexPath.row) else {
+                return cell
+            }
+            cell.configure(image: imageURL.sizes[2].url)
+            return cell
+        } else {
+            let cell = smallCollectionView.dequeueReusableCell(withReuseIdentifier: "carouselCell", for: indexPath) as! CarouselCellCollectionViewCell
+            guard let imageURL = controller?.getOneImageFromAlbum(number: indexPath.row) else {
+                return cell
+            }
+            cell.configure(image: imageURL.sizes[2].url)
             return cell
         }
-        cell.configure(image: imageURL)
-        cell.backgroundColor = .green
-        return cell
     }
     
     func setupCollectionView() {
@@ -76,3 +85,13 @@ extension CarouselViewController: UICollectionViewDelegate, UICollectionViewData
         return layout
     }
 }
+
+//extension CarouselViewController {
+//    @IBAction func shareOnlyImage(_ sender: UIButton) {
+//        let image = UIImage(named: "")
+//        let imageShare = [ image! ]
+//        let activityViewController = UIActivityViewController(activityItems: imageShare , applicationActivities: nil)
+//        activityViewController.popoverPresentationController?.sourceView = self.view
+//        self.present(activityViewController, animated: true, completion: nil)
+//     }
+//}

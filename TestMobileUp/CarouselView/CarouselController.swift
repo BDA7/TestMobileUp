@@ -10,22 +10,19 @@ import UIKit
 
 protocol CarouselControllerProtocol {
     var view: CarouselViewControllerProtocol? { get set }
-    func getAlbums() -> [UIImageView]
-    func getOneImageFromAlbum(number: Int) -> UIImageView
+    func getAlbums() -> [Album]
+    func getOneImageFromAlbum(number: Int) -> Album
 }
 
 class CarouselController: CarouselControllerProtocol {
-    var albums: [UIImageView] = [UIImageView]()
+    var albums: [Album] = [Album]()
     var view: CarouselViewControllerProtocol?
     
-    func getAlbums() -> [UIImageView] {
+    func getAlbums() -> [Album] {
         return albums
     }
-    func loadingImages() {
-        
-    }
     
-    func getOneImageFromAlbum(number: Int) -> UIImageView {
+    func getOneImageFromAlbum(number: Int) -> Album {
         return albums[number]
     }
 }

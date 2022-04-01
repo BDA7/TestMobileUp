@@ -28,6 +28,7 @@ class PhotoViewController: UIViewController, PhotoViewProtocol {
         self.navigationController?.navigationBar.tintColor = .black
         controller?.getData()
         setupCollection()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Выход", style: .plain, target: self, action: #selector(logoutVk(_:)))
     }
 
     func setupCollection() {
@@ -35,6 +36,7 @@ class PhotoViewController: UIViewController, PhotoViewProtocol {
         collectionView.backgroundColor = .white
         collectionView.delegate = self
         collectionView.dataSource = self
+        
     }
 
 }
@@ -67,4 +69,11 @@ extension PhotoViewController: UICollectionViewDelegate, UICollectionViewDataSou
         collectionView.reloadData()
     }
     
+}
+
+extension PhotoViewController {
+    @objc
+    func logoutVk(_ sender: UIButton) {
+        controller?.exit(viewController: self)
+    }
 }

@@ -8,8 +8,8 @@
 import UIKit
 
 class CarouselCellCollectionViewCell: UICollectionViewCell {
-    func configure(image: UIImageView) {
-        self.imagePhoto = image
+    func configure(image: String) {
+        self.imagePhoto.load(link: image)
     }
 
     @IBOutlet weak var imagePhoto: UIImageView!

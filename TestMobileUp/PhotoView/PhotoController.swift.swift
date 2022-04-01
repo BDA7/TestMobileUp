@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import VK_ios_sdk
 
 protocol PhotoControllerProtocol {
     var view: PhotoViewProtocol? { get set }
@@ -14,6 +15,7 @@ protocol PhotoControllerProtocol {
     func getAlbums() -> [Album]
     func getOneImageFromAlbum(number: Int) -> String
     func pushToCarousel(viewController: UIViewController)
+    func exit(viewController: UIViewController)
 }
 
 class PhotoController: PhotoControllerProtocol {
@@ -41,18 +43,14 @@ class PhotoController: PhotoControllerProtocol {
     func getOneImageFromAlbum(number: Int) -> String {
         return albums[number].sizes[2].url
     }
-    func parseToImage() -> [UIImageView] {
-        var arr: [UIImageView] = [UIImageView]()
-        for album in albums {
-            let imageView = UIImageView()
-            imageView.load(link: album.sizes[2].url)
-            arr.append(imageView)
-        }
-        return arr
-    }
 
     func pushToCarousel(viewController: UIViewController) {
-        let vc = CarouselModule.build(albums: parseToImage())
+        let vc = CarouselModule.build(albums: albums)
         viewController.navigationController?.pushViewController(vc, animated: true)
+    }
+
+    func exit(viewController: UIViewController) {
+        VKSdk.forceLogout()
+        viewController.navigationController?.popViewController(animated: true)
     }
 }

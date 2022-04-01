@@ -54,14 +54,12 @@ class ViewController: UIViewController, VKSdkDelegate, VKSdkUIDelegate {
                 self.controller.routePhoto(viewController: self)
             } else if error != nil {
                 print(error)
-            } else {
-                VKSdk.authorize(self.permiss)
-
             }
         }
         
     }
     @IBAction func authorizationVK(_ sender: Any) {
+        VKSdk.authorize(self.permiss)
     }
     
 }
