@@ -20,11 +20,13 @@ protocol PhotoControllerProtocol {
 
 class PhotoController: PhotoControllerProtocol {
     var view: PhotoViewProtocol?
+    private var url: String = "https://api.vk.com/method/photos.get?owner_id=-128666765&album_id=266276915&access_token="
+    private var vkVersion: String = "&v=5.131"
     private var albums: [Album] = [Album]()
     
     let network = Network()
     func getData(token: String) {
-        network.request(urlString: "https://api.vk.com/method/photos.get?owner_id=-128666765&album_id=266276915&access_token=\(token)&v=5.131") { result in
+        network.request(urlString: createURL(token: token)) { result in
             switch result {
                 
             case .success(let request):
@@ -34,6 +36,10 @@ class PhotoController: PhotoControllerProtocol {
                 print(error)
             }
         }
+    }
+
+    func createURL(token: String) -> String {
+        return url + token + vkVersion
     }
 
     func getAlbums() -> [Album] {

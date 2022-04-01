@@ -10,7 +10,7 @@ import VK_ios_sdk
 
 class ViewController: UIViewController, VKSdkDelegate, VKSdkUIDelegate {
     let VK_APP_ID = "8118485"
-    let permiss = [VK_PER_PHOTOS, VK_PER_WALL]
+    let permiss = [VK_PER_PHOTOS]
 
     func vkSdkAccessAuthorizationFinished(with result: VKAuthorizationResult!) {
     }
