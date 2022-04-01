@@ -10,7 +10,8 @@ import SnapKit
 
 protocol CarouselViewControllerProtocol {
     var controller: CarouselControllerProtocol? { get set }
-    func updteMainPhoto(newImage: UIImageView)
+    func updteMainPhoto(url: String)
+    
 }
 
 class CarouselViewController: UIViewController, CarouselViewControllerProtocol {
@@ -82,8 +83,8 @@ extension CarouselViewController {
         }
     }
 
-    func updteMainPhoto(newImage: UIImageView) {
-        self.photo = newImage
+    func updteMainPhoto(url: String) {
+        self.photo.load(link: url)
     }
 
     // share image

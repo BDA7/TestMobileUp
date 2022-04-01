@@ -27,9 +27,8 @@ class CarouselController: CarouselControllerProtocol {
         return albums[number]
     }
     func loadMainPhoto(photoNumber: Int) {
-        let mainPhoto = UIImageView()
-        mainPhoto.load(link: albums[photoNumber].sizes[6].url)
-        view?.updteMainPhoto(newImage: mainPhoto)
+        let url = albums[photoNumber].sizes[5].url
+        view?.updteMainPhoto(url: url)
     }
 
 }
