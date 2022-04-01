@@ -12,6 +12,7 @@ protocol CarouselControllerProtocol {
     var view: CarouselViewControllerProtocol? { get set }
     func getAlbums() -> [Album]
     func getOneImageFromAlbum(number: Int) -> Album
+    func loadMainPhoto(photoNumber: Int)
 }
 
 class CarouselController: CarouselControllerProtocol {
@@ -25,4 +26,10 @@ class CarouselController: CarouselControllerProtocol {
     func getOneImageFromAlbum(number: Int) -> Album {
         return albums[number]
     }
+    func loadMainPhoto(photoNumber: Int) {
+        let mainPhoto = UIImageView()
+        mainPhoto.load(link: albums[photoNumber].sizes[6].url)
+        view?.updteMainPhoto(newImage: mainPhoto)
+    }
+
 }

@@ -15,8 +15,6 @@ class PhotoCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var photoImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        photoImage.contentMode = .scaleToFill
-        // Initialization code
+        photoImage.contentMode = .scaleAspectFill
     }
-
 }

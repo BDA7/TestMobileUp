@@ -23,6 +23,7 @@ class PhotoViewController: UIViewController, PhotoViewProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.setHidesBackButton(true, animated: true)
         title = "Mobile Up Gallery"
         self.navigationController?.navigationBar.backgroundColor = .white
         self.navigationController?.navigationBar.tintColor = .black
@@ -55,7 +56,7 @@ extension PhotoViewController: UICollectionViewDelegate, UICollectionViewDataSou
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        controller?.pushToCarousel(viewController: self)
+        controller?.pushToCarousel(viewController: self, photoNumber: indexPath.row)
     }
 
     func createLayoutCells() -> UICollectionViewFlowLayout {

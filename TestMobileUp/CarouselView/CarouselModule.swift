@@ -9,12 +9,13 @@ import Foundation
 import UIKit
 
 class CarouselModule {
-    static func build(albums: [Album]) -> CarouselViewController {
+    static func build(albums: [Album], photoNumber: Int) -> CarouselViewController {
         let view = CarouselViewController()
         let controller = CarouselController()
         view.controller = controller
         controller.view = view
         controller.albums = albums
+        controller.loadMainPhoto(photoNumber: photoNumber)
         return view
     }
 }

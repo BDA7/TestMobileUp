@@ -6,36 +6,34 @@
 //
 
 import UIKit
+import SnapKit
 
 protocol CarouselViewControllerProtocol {
     var controller: CarouselControllerProtocol? { get set }
+    func updteMainPhoto(newImage: UIImageView)
 }
 
 class CarouselViewController: UIViewController, CarouselViewControllerProtocol {
     var controller: CarouselControllerProtocol?
-    lazy var bigCollectionView: UICollectionView = {
-        
-        let collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height/1.1), collectionViewLayout: createLayoutCellsForBig())
+    lazy var smallCollectionView: UICollectionView = {
+        let collectionView = UICollectionView(frame: CGRect(x: 0, y: view.frame.height/1.2, width: view.frame.width, height: view.frame.height - view.frame.height/1.2), collectionViewLayout: createLayoutCellsForSmall())
         collectionView.register(UINib(nibName: "CarouselCellCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "carouselCell")
         collectionView.delegate = self
         collectionView.dataSource = self
         return collectionView
     }()
-
-    lazy var smallCollectionView: UICollectionView = {
-        let collectionView = UICollectionView(frame: CGRect(x: 0, y: bigCollectionView.frame.height, width: view.frame.width, height: view.frame.height - view.frame.height/1.1), collectionViewLayout: createLayoutCellsForSmall())
-        collectionView.register(UINib(nibName: "CarouselCellCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "carouselCell")
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        return collectionView
+    lazy var photo: UIImageView = {
+        let image = UIImageView()
+        return image
     }()
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
         setupCollectionView()
-
-        view.backgroundColor = .darkGray
+        setupPhtoto()
+        self.navigationController?.navigationBar.topItem?.title = " "
     }
 
 }
@@ -46,52 +44,44 @@ extension CarouselViewController: UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if collectionView == bigCollectionView {
-            let cell = bigCollectionView.dequeueReusableCell(withReuseIdentifier: "carouselCell", for: indexPath) as! CarouselCellCollectionViewCell
-            guard let imageURL = controller?.getOneImageFromAlbum(number: indexPath.row) else {
-                return cell
-            }
-            cell.configure(image: imageURL.sizes[2].url)
-            return cell
-        } else {
-            let cell = smallCollectionView.dequeueReusableCell(withReuseIdentifier: "carouselCell", for: indexPath) as! CarouselCellCollectionViewCell
-            guard let imageURL = controller?.getOneImageFromAlbum(number: indexPath.row) else {
-                return cell
-            }
-            cell.configure(image: imageURL.sizes[2].url)
+        let cell = smallCollectionView.dequeueReusableCell(withReuseIdentifier: "carouselCell", for: indexPath) as! CarouselCellCollectionViewCell
+        guard let imageURL = controller?.getOneImageFromAlbum(number: indexPath.row) else {
             return cell
         }
+        cell.configure(image: imageURL.sizes[2].url)
+        return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        controller?.loadMainPhoto(photoNumber: indexPath.row)
     }
     
     func setupCollectionView() {
-        view.addSubview(bigCollectionView)
         view.addSubview(smallCollectionView)
-        bigCollectionView.backgroundColor = .white
         smallCollectionView.backgroundColor = .white
     }
 
-    func createLayoutCellsForBig() -> UICollectionViewFlowLayout {
-        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 1, left: 0, bottom: 0, right: 0)
-        layout.itemSize = CGSize(width: view.bounds.height/2.1, height: view.bounds.height/2.1)
-        layout.scrollDirection = .horizontal
-        return layout
-    }
     func createLayoutCellsForSmall() -> UICollectionViewFlowLayout {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 5, right: 0)
-        layout.itemSize = CGSize(width: view.frame.height - view.frame.height/1.1 - 5, height: view.frame.height - view.frame.height/1.1 - 5)
+        layout.sectionInset = UIEdgeInsets(top: 5, left: 0, bottom: 0, right: 0)
+        layout.itemSize = CGSize(width: view.frame.height - view.frame.height/1.1, height: view.frame.height - view.frame.height/1.1)
         layout.scrollDirection = .horizontal
         return layout
     }
 }
 
-//extension CarouselViewController {
-//    @IBAction func shareOnlyImage(_ sender: UIButton) {
-//        let image = UIImage(named: "")
-//        let imageShare = [ image! ]
-//        let activityViewController = UIActivityViewController(activityItems: imageShare , applicationActivities: nil)
-//        activityViewController.popoverPresentationController?.sourceView = self.view
-//        self.present(activityViewController, animated: true, completion: nil)
-//     }
-//}
+extension CarouselViewController {
+    func setupPhtoto() {
+        view.addSubview(photo)
+        photo.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(view.bounds.width/1.8)
+            make.left.equalToSuperview()
+            make.right.equalToSuperview()
+            make.bottom.equalToSuperview().inset(view.bounds.width/1.8)
+        }
+    }
+
+    func updteMainPhoto(newImage: UIImageView) {
+        self.photo = newImage
+    }
+}

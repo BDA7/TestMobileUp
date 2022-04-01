@@ -14,7 +14,7 @@ protocol PhotoControllerProtocol {
     func getData()
     func getAlbums() -> [Album]
     func getOneImageFromAlbum(number: Int) -> String
-    func pushToCarousel(viewController: UIViewController)
+    func pushToCarousel(viewController: UIViewController, photoNumber: Int)
     func exit(viewController: UIViewController)
 }
 
@@ -41,11 +41,11 @@ class PhotoController: PhotoControllerProtocol {
     }
     
     func getOneImageFromAlbum(number: Int) -> String {
-        return albums[number].sizes[2].url
+        return albums[number].sizes[5].url
     }
 
-    func pushToCarousel(viewController: UIViewController) {
-        let vc = CarouselModule.build(albums: albums)
+    func pushToCarousel(viewController: UIViewController, photoNumber: Int) {
+        let vc = CarouselModule.build(albums: albums, photoNumber: photoNumber)
         viewController.navigationController?.pushViewController(vc, animated: true)
     }
 
