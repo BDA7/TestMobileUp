@@ -11,7 +11,6 @@ import SnapKit
 protocol CarouselViewControllerProtocol {
     var controller: CarouselControllerProtocol? { get set }
     func updteMainPhoto(url: String)
-    
 }
 
 class CarouselViewController: UIViewController, CarouselViewControllerProtocol {
@@ -23,11 +22,11 @@ class CarouselViewController: UIViewController, CarouselViewControllerProtocol {
         collectionView.dataSource = self
         return collectionView
     }()
+
     lazy var photo: UIImageView = {
         let image = UIImageView()
         return image
     }()
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +36,6 @@ class CarouselViewController: UIViewController, CarouselViewControllerProtocol {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.up"), style: .done, target: self, action: #selector(shareImageButton))
         self.navigationController?.navigationBar.topItem?.title = " "
     }
-
 }
 
 extension CarouselViewController: UICollectionViewDelegate, UICollectionViewDataSource {

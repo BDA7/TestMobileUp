@@ -30,5 +30,4 @@ class CarouselController: CarouselControllerProtocol {
         let url = albums[photoNumber].sizes[5].url
         view?.updteMainPhoto(url: url)
     }
-
 }

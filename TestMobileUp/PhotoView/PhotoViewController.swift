@@ -27,7 +27,6 @@ class PhotoViewController: UIViewController, PhotoViewProtocol {
         title = "Mobile Up Gallery"
         self.navigationController?.navigationBar.backgroundColor = .white
         self.navigationController?.navigationBar.tintColor = .black
-        controller?.getData()
         setupCollection()
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Выход", style: .plain, target: self, action: #selector(logoutVk(_:)))
     }

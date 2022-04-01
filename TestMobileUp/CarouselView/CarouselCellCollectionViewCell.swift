@@ -15,7 +15,6 @@ class CarouselCellCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imagePhoto: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
 }

@@ -11,7 +11,7 @@ import VK_ios_sdk
 
 protocol PhotoControllerProtocol {
     var view: PhotoViewProtocol? { get set }
-    func getData()
+    func getData(token: String)
     func getAlbums() -> [Album]
     func getOneImageFromAlbum(number: Int) -> String
     func pushToCarousel(viewController: UIViewController, photoNumber: Int)
@@ -23,8 +23,8 @@ class PhotoController: PhotoControllerProtocol {
     private var albums: [Album] = [Album]()
     
     let network = Network()
-    func getData() {
-        network.request(urlString: "https://api.vk.com/method/photos.get?owner_id=-128666765&album_id=266276915&access_token=870feaa4c578bb59a392ace8688673fc04e9c60a20f3933cbc47c9610d02a2be83ec4b4c204f05703af7b&v=5.131") { result in
+    func getData(token: String) {
+        network.request(urlString: "https://api.vk.com/method/photos.get?owner_id=-128666765&album_id=266276915&access_token=\(token)&v=5.131") { result in
             switch result {
                 
             case .success(let request):

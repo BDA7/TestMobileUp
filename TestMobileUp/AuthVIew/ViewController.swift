@@ -13,13 +13,6 @@ class ViewController: UIViewController, VKSdkDelegate, VKSdkUIDelegate {
     let permiss = [VK_PER_PHOTOS, VK_PER_WALL]
 
     func vkSdkAccessAuthorizationFinished(with result: VKAuthorizationResult!) {
-        print("Authorizatin true")
-        guard
-            let response = result.token,
-            let email = response.email,
-            let token = response.accessToken
-        else { return }
-        print("TOKEN: \(token)")
     }
 
     func vkSdkUserAuthorizationFailed() {
@@ -31,13 +24,14 @@ class ViewController: UIViewController, VKSdkDelegate, VKSdkUIDelegate {
     }
     func vkSdkAccessTokenUpdated(_ newToken: VKAccessToken!, oldToken: VKAccessToken!) {
         if newToken != nil {
-            self.token = newToken.accessToken
+            controller.setToken(newToken: newToken.accessToken)
+        } else if oldToken != nil {
+            controller.setToken(newToken: newToken.accessToken)
         }
     }
     
     func vkSdkNeedCaptchaEnter(_ captchaError: VKError!) {}
     let controller = AuthController()
-    private var token: String?
 
     @IBOutlet weak var authButton: UIButton!
     override func viewDidLoad() {
