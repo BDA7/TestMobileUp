@@ -6,25 +6,26 @@
 //
 
 import Foundation
+import UIKit
 
 protocol CarouselControllerProtocol {
     var view: CarouselViewControllerProtocol? { get set }
-    func getAlbums() -> [Album]
-    func getOneImageFromAlbum(number: Int) -> String
+    func getAlbums() -> [UIImageView]
+    func getOneImageFromAlbum(number: Int) -> UIImageView
 }
 
 class CarouselController: CarouselControllerProtocol {
-    var albums: [Album] = [Album]()
+    var albums: [UIImageView] = [UIImageView]()
     var view: CarouselViewControllerProtocol?
     
-    func getAlbums() -> [Album] {
+    func getAlbums() -> [UIImageView] {
         return albums
     }
     func loadingImages() {
         
     }
     
-    func getOneImageFromAlbum(number: Int) -> String {
-        return albums[number].sizes[2].url
+    func getOneImageFromAlbum(number: Int) -> UIImageView {
+        return albums[number]
     }
 }

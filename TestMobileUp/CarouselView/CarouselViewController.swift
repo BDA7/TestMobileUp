@@ -50,6 +50,7 @@ extension CarouselViewController: UICollectionViewDelegate, UICollectionViewData
             return cell
         }
         cell.configure(image: imageURL)
+        cell.backgroundColor = .green
         return cell
     }
     

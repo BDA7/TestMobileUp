@@ -41,9 +41,18 @@ class PhotoController: PhotoControllerProtocol {
     func getOneImageFromAlbum(number: Int) -> String {
         return albums[number].sizes[2].url
     }
+    func parseToImage() -> [UIImageView] {
+        var arr: [UIImageView] = [UIImageView]()
+        for album in albums {
+            let imageView = UIImageView()
+            imageView.load(link: album.sizes[2].url)
+            arr.append(imageView)
+        }
+        return arr
+    }
 
     func pushToCarousel(viewController: UIViewController) {
-        let vc = CarouselModule.build(albums: albums)
+        let vc = CarouselModule.build(albums: parseToImage())
         viewController.navigationController?.pushViewController(vc, animated: true)
     }
 }

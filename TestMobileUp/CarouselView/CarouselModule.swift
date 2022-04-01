@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import UIKit
 
 class CarouselModule {
-    static func build(albums: [Album]) -> CarouselViewController {
+    static func build(albums: [UIImageView]) -> CarouselViewController {
         let view = CarouselViewController()
         let controller = CarouselController()
         view.controller = controller
