@@ -8,30 +8,10 @@
 import UIKit
 import VK_ios_sdk
 
-class ViewController: UIViewController, VKSdkDelegate, VKSdkUIDelegate {
-    let VK_APP_ID = "8118485"
-    let permiss = [VK_PER_PHOTOS]
-
-    func vkSdkAccessAuthorizationFinished(with result: VKAuthorizationResult!) {
-    }
-
-    func vkSdkUserAuthorizationFailed() {
-        print("FAIL")
-    }
-
-    func vkSdkShouldPresent(_ controller: UIViewController!) {
-        self.present(controller, animated: true, completion: nil)
-    }
-    func vkSdkAccessTokenUpdated(_ newToken: VKAccessToken!, oldToken: VKAccessToken!) {
-        if newToken != nil {
-            controller.setToken(newToken: newToken.accessToken)
-        } else if oldToken != nil {
-            controller.setToken(newToken: oldToken.accessToken)
-        }
-    }
-    
-    func vkSdkNeedCaptchaEnter(_ captchaError: VKError!) {}
-    let controller = AuthController()
+class ViewController: UIViewController {
+    private let VK_APP_ID = "8118485"
+    private let permiss = [VK_PER_PHOTOS]
+    private let controller = AuthController()
 
     @IBOutlet weak var authButton: UIButton!
     override func viewDidLoad() {
@@ -50,11 +30,31 @@ class ViewController: UIViewController, VKSdkDelegate, VKSdkUIDelegate {
                 print(error)
             }
         }
-        
     }
+
     @IBAction func authorizationVK(_ sender: Any) {
         VKSdk.authorize(self.permiss)
     }
-    
 }
 
+extension ViewController: VKSdkDelegate, VKSdkUIDelegate {
+    func vkSdkAccessAuthorizationFinished(with result: VKAuthorizationResult!) {}
+
+    func vkSdkUserAuthorizationFailed() {
+        print("FAIL")
+    }
+
+    func vkSdkShouldPresent(_ controller: UIViewController!) {
+        self.present(controller, animated: true, completion: nil)
+    }
+
+    func vkSdkAccessTokenUpdated(_ newToken: VKAccessToken!, oldToken: VKAccessToken!) {
+        if newToken != nil {
+            controller.setToken(newToken: newToken.accessToken)
+        } else if oldToken != nil {
+            controller.setToken(newToken: oldToken.accessToken)
+        }
+    }
+    
+    func vkSdkNeedCaptchaEnter(_ captchaError: VKError!) {}
+}
