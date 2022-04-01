@@ -6,3 +6,11 @@
 //
 
 import Foundation
+import UIKit
+
+class AuthController {
+    func routePhoto(viewController: UIViewController) {
+        let vc = ModulePhotoCells.build()
+        viewController.navigationController?.pushViewController(vc, animated: true)
+    }
+}

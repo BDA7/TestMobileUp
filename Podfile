@@ -6,6 +6,7 @@ target 'TestMobileUp' do
   use_frameworks!
 
   pod 'VK-ios-sdk', '~> 1.6.2'
+  pod 'SnapKit'
   # Pods for TestMobileUp
 
 end

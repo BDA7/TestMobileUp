@@ -6,25 +6,33 @@
 //
 
 import UIKit
+import SnapKit
 
 protocol PhotoViewProtocol {
+    var controller: PhotoControllerProtocol? { get set }
+    func updateCollection()
 }
 
 class PhotoViewController: UIViewController, PhotoViewProtocol {
     lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: self.createLayoutCells())
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        collectionView.register(UINib(nibName: "PhotoCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "cell")
         return collectionView
     }()
+    var controller: PhotoControllerProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Mobile Up Gallery"
+        self.navigationController?.navigationBar.backgroundColor = .white
+        self.navigationController?.navigationBar.tintColor = .black
+        controller?.getData()
         setupCollection()
     }
 
     func setupCollection() {
         view.addSubview(collectionView)
-        collectionView.backgroundColor = .brown
+        collectionView.backgroundColor = .white
         collectionView.delegate = self
         collectionView.dataSource = self
     }
@@ -33,23 +41,30 @@ class PhotoViewController: UIViewController, PhotoViewProtocol {
 
 extension PhotoViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return controller?.getAlbums().count ?? 0
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        cell.backgroundColor = .white
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! PhotoCollectionViewCell
+        guard let element = controller?.getOneImageFromAlbum(number: indexPath.row) else {
+            return cell
+        }
+        cell.configure(url: element)
         return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        controller?.pushToCarousel(viewController: self)
     }
 
     func createLayoutCells() -> UICollectionViewFlowLayout {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 2, bottom: 2, right: 2)
+        layout.sectionInset = UIEdgeInsets(top: 1, left: 0, bottom: 0, right: 0)
         layout.itemSize = CGSize(width: view.bounds.width/2.1, height: view.bounds.width/2.1)
         return layout
     }
-
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return CGSize(width: view.bounds.width/3, height: view.bounds.width/3)
-//    }
+    
+    func updateCollection() {
+        collectionView.reloadData()
+    }
     
 }

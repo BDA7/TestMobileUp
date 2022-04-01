@@ -10,7 +10,7 @@ import VK_ios_sdk
 
 class ViewController: UIViewController, VKSdkDelegate, VKSdkUIDelegate {
     let VK_APP_ID = "8118485"
-    let permiss = [VK_PER_PHOTOS, VK_PER_GROUPS, VK_PER_FRIENDS]
+    let permiss = [VK_PER_PHOTOS, VK_PER_WALL]
 
     func vkSdkAccessAuthorizationFinished(with result: VKAuthorizationResult!) {
         print("Authorizatin true")
@@ -21,38 +21,44 @@ class ViewController: UIViewController, VKSdkDelegate, VKSdkUIDelegate {
         else { return }
         print("TOKEN: \(token)")
     }
-    
+
     func vkSdkUserAuthorizationFailed() {
         print("FAIL")
     }
-    
+
     func vkSdkShouldPresent(_ controller: UIViewController!) {
         self.present(controller, animated: true, completion: nil)
     }
+    func vkSdkAccessTokenUpdated(_ newToken: VKAccessToken!, oldToken: VKAccessToken!) {
+        if newToken != nil {
+            self.token = newToken.accessToken
+        }
+    }
     
     func vkSdkNeedCaptchaEnter(_ captchaError: VKError!) {}
+    let controller = AuthController()
+    private var token: String?
 
     @IBOutlet weak var authButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         let sdkInstance = VKSdk.initialize(withAppId: self.VK_APP_ID)
-        sdkInstance?.unregisterDelegate(self)
+        sdkInstance?.register(self)
         sdkInstance?.uiDelegate = self
-        view.backgroundColor = .darkGray
+        view.backgroundColor = .white
+    }
 
+    override func viewDidAppear(_ animated: Bool) {
         VKSdk.wakeUpSession(permiss) { state, error in
             if state == .authorized {
-                print("AAAAA")
-                self.pushToPhoto()
+                self.controller.routePhoto(viewController: self)
             } else if error != nil {
                 print(error)
             } else {
                 VKSdk.authorize(self.permiss)
+
             }
         }
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
         
     }
     @IBAction func authorizationVK(_ sender: Any) {
@@ -60,14 +66,3 @@ class ViewController: UIViewController, VKSdkDelegate, VKSdkUIDelegate {
     
 }
 
-extension ViewController {
-    
-    
-}
-
-extension ViewController {
-    func pushToPhoto() {
-        let vc = PhotoViewController()
-        self.navigationController?.present(vc, animated: true, completion: nil)
-    }
-}

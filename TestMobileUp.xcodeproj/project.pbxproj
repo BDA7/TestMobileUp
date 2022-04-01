@@ -8,11 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		2C21A3C9832EEF1240A49CC2 /* Pods_TestMobileUp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A23E820A52A9AF898E13B520 /* Pods_TestMobileUp.framework */; };
+		640A2AE527F710DE00B5B2EF /* CarouselCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640A2AE327F710DE00B5B2EF /* CarouselCellCollectionViewCell.swift */; };
+		640A2AE627F710DE00B5B2EF /* CarouselCellCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 640A2AE427F710DE00B5B2EF /* CarouselCellCollectionViewCell.xib */; };
+		642224E027F6F40D00DE0CE8 /* CarouselViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642224DF27F6F40D00DE0CE8 /* CarouselViewController.swift */; };
+		642224E227F6F42300DE0CE8 /* CarouselController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642224E127F6F42300DE0CE8 /* CarouselController.swift */; };
+		642224E427F6F43700DE0CE8 /* CarouselModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642224E327F6F43700DE0CE8 /* CarouselModule.swift */; };
 		64851E2C27F4A35900EC827E /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64851E2B27F4A35900EC827E /* PhotoViewController.swift */; };
 		64851E3027F4A63100EC827E /* PhotoController.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64851E2F27F4A63100EC827E /* PhotoController.swift.swift */; };
 		64851E3227F4A64200EC827E /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64851E3127F4A64200EC827E /* AuthController.swift */; };
 		64851E3727F59C0F00EC827E /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64851E3527F59C0F00EC827E /* PhotoCollectionViewCell.swift */; };
 		64851E3827F59C0F00EC827E /* PhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64851E3627F59C0F00EC827E /* PhotoCollectionViewCell.xib */; };
+		64851E3A27F654C100EC827E /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64851E3927F654C100EC827E /* Models.swift */; };
+		64851E3C27F6589700EC827E /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64851E3B27F6589700EC827E /* Network.swift */; };
+		64851E3E27F67EB400EC827E /* ModulePhotoCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64851E3D27F67EB400EC827E /* ModulePhotoCells.swift */; };
 		64F17F5A27F1CEAA0013B402 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F17F5927F1CEAA0013B402 /* AppDelegate.swift */; };
 		64F17F5C27F1CEAA0013B402 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F17F5B27F1CEAA0013B402 /* SceneDelegate.swift */; };
 		64F17F5E27F1CEAA0013B402 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F17F5D27F1CEAA0013B402 /* ViewController.swift */; };
@@ -22,11 +30,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		640A2AE327F710DE00B5B2EF /* CarouselCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselCellCollectionViewCell.swift; sourceTree = "<group>"; };
+		640A2AE427F710DE00B5B2EF /* CarouselCellCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarouselCellCollectionViewCell.xib; sourceTree = "<group>"; };
+		642224DF27F6F40D00DE0CE8 /* CarouselViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselViewController.swift; sourceTree = "<group>"; };
+		642224E127F6F42300DE0CE8 /* CarouselController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselController.swift; sourceTree = "<group>"; };
+		642224E327F6F43700DE0CE8 /* CarouselModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselModule.swift; sourceTree = "<group>"; };
 		64851E2B27F4A35900EC827E /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		64851E2F27F4A63100EC827E /* PhotoController.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoController.swift.swift; sourceTree = "<group>"; };
 		64851E3127F4A64200EC827E /* AuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthController.swift; sourceTree = "<group>"; };
 		64851E3527F59C0F00EC827E /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		64851E3627F59C0F00EC827E /* PhotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCollectionViewCell.xib; sourceTree = "<group>"; };
+		64851E3927F654C100EC827E /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		64851E3B27F6589700EC827E /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		64851E3D27F67EB400EC827E /* ModulePhotoCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModulePhotoCells.swift; sourceTree = "<group>"; };
 		64F17F5627F1CEAA0013B402 /* TestMobileUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestMobileUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64F17F5927F1CEAA0013B402 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		64F17F5B27F1CEAA0013B402 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +76,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		642224DE27F6F3E000DE0CE8 /* CarouselView */ = {
+			isa = PBXGroup;
+			children = (
+				642224DF27F6F40D00DE0CE8 /* CarouselViewController.swift */,
+				642224E127F6F42300DE0CE8 /* CarouselController.swift */,
+				642224E327F6F43700DE0CE8 /* CarouselModule.swift */,
+				640A2AE327F710DE00B5B2EF /* CarouselCellCollectionViewCell.swift */,
+				640A2AE427F710DE00B5B2EF /* CarouselCellCollectionViewCell.xib */,
+			);
+			path = CarouselView;
+			sourceTree = "<group>";
+		};
 		64851E2D27F4A60500EC827E /* AuthVIew */ = {
 			isa = PBXGroup;
 			children = (
@@ -76,6 +104,7 @@
 				64851E2F27F4A63100EC827E /* PhotoController.swift.swift */,
 				64851E3527F59C0F00EC827E /* PhotoCollectionViewCell.swift */,
 				64851E3627F59C0F00EC827E /* PhotoCollectionViewCell.xib */,
+				64851E3D27F67EB400EC827E /* ModulePhotoCells.swift */,
 			);
 			path = PhotoView;
 			sourceTree = "<group>";
@@ -101,6 +130,7 @@
 		64F17F5827F1CEAA0013B402 /* TestMobileUp */ = {
 			isa = PBXGroup;
 			children = (
+				642224DE27F6F3E000DE0CE8 /* CarouselView */,
 				64851E2E27F4A61200EC827E /* PhotoView */,
 				64851E2D27F4A60500EC827E /* AuthVIew */,
 				64F17F5927F1CEAA0013B402 /* AppDelegate.swift */,
@@ -109,6 +139,8 @@
 				64F17F6227F1CEAD0013B402 /* Assets.xcassets */,
 				64F17F6427F1CEAD0013B402 /* LaunchScreen.storyboard */,
 				64F17F6727F1CEAD0013B402 /* Info.plist */,
+				64851E3927F654C100EC827E /* Models.swift */,
+				64851E3B27F6589700EC827E /* Network.swift */,
 			);
 			path = TestMobileUp;
 			sourceTree = "<group>";
@@ -185,6 +217,7 @@
 				64F17F6627F1CEAD0013B402 /* LaunchScreen.storyboard in Resources */,
 				64851E3827F59C0F00EC827E /* PhotoCollectionViewCell.xib in Resources */,
 				64F17F6327F1CEAD0013B402 /* Assets.xcassets in Resources */,
+				640A2AE627F710DE00B5B2EF /* CarouselCellCollectionViewCell.xib in Resources */,
 				64F17F6127F1CEAA0013B402 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -238,10 +271,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				642224E027F6F40D00DE0CE8 /* CarouselViewController.swift in Sources */,
+				642224E227F6F42300DE0CE8 /* CarouselController.swift in Sources */,
 				64F17F5E27F1CEAA0013B402 /* ViewController.swift in Sources */,
 				64851E3227F4A64200EC827E /* AuthController.swift in Sources */,
+				640A2AE527F710DE00B5B2EF /* CarouselCellCollectionViewCell.swift in Sources */,
+				642224E427F6F43700DE0CE8 /* CarouselModule.swift in Sources */,
 				64851E2C27F4A35900EC827E /* PhotoViewController.swift in Sources */,
+				64851E3A27F654C100EC827E /* Models.swift in Sources */,
+				64851E3E27F67EB400EC827E /* ModulePhotoCells.swift in Sources */,
 				64F17F5A27F1CEAA0013B402 /* AppDelegate.swift in Sources */,
+				64851E3C27F6589700EC827E /* Network.swift in Sources */,
 				64851E3727F59C0F00EC827E /* PhotoCollectionViewCell.swift in Sources */,
 				64F17F5C27F1CEAA0013B402 /* SceneDelegate.swift in Sources */,
 				64851E3027F4A63100EC827E /* PhotoController.swift.swift in Sources */,

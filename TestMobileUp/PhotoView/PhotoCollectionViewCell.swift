@@ -8,10 +8,14 @@
 import UIKit
 
 class PhotoCollectionViewCell: UICollectionViewCell {
+    func configure(url: String) {
+        photoImage.load(link: url)
+    }
 
     @IBOutlet weak var photoImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
+        photoImage.contentMode = .scaleToFill
         // Initialization code
     }
 
