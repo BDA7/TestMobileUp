@@ -41,7 +41,7 @@ class PhotoController: PhotoControllerProtocol {
     }
     
     func getOneImageFromAlbum(number: Int) -> String {
-        return albums[number].sizes[5].url
+        return albums[number].sizes[2].url
     }
 
     func pushToCarousel(viewController: UIViewController, photoNumber: Int) {

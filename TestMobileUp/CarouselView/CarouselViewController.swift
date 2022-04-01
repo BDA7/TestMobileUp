@@ -33,6 +33,7 @@ class CarouselViewController: UIViewController, CarouselViewControllerProtocol {
         view.backgroundColor = .white
         setupCollectionView()
         setupPhtoto()
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.up"), style: .done, target: self, action: #selector(shareImageButton))
         self.navigationController?.navigationBar.topItem?.title = " "
     }
 
@@ -83,5 +84,13 @@ extension CarouselViewController {
 
     func updteMainPhoto(newImage: UIImageView) {
         self.photo = newImage
+    }
+
+    // share image
+    @IBAction func shareImageButton(_ sender: UIButton) {
+        let imageToShare = [ photo.image ]
+        let activityViewController = UIActivityViewController(activityItems: imageToShare , applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view
+        self.present(activityViewController, animated: true, completion: nil)
     }
 }
