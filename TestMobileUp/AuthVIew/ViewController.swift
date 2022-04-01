@@ -26,7 +26,7 @@ class ViewController: UIViewController, VKSdkDelegate, VKSdkUIDelegate {
         if newToken != nil {
             controller.setToken(newToken: newToken.accessToken)
         } else if oldToken != nil {
-            controller.setToken(newToken: newToken.accessToken)
+            controller.setToken(newToken: oldToken.accessToken)
         }
     }
     

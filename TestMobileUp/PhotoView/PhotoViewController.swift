@@ -23,11 +23,15 @@ class PhotoViewController: UIViewController, PhotoViewProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupNavBar()
+        setupCollection()
+    }
+
+    func setupNavBar() {
         self.navigationItem.setHidesBackButton(true, animated: true)
         title = "Mobile Up Gallery"
         self.navigationController?.navigationBar.backgroundColor = .white
         self.navigationController?.navigationBar.tintColor = .black
-        setupCollection()
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Выход", style: .plain, target: self, action: #selector(logoutVk(_:)))
     }
 
@@ -36,7 +40,6 @@ class PhotoViewController: UIViewController, PhotoViewProtocol {
         collectionView.backgroundColor = .white
         collectionView.delegate = self
         collectionView.dataSource = self
-        
     }
 
 }
