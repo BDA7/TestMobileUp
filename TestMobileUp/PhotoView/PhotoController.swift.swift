@@ -11,7 +11,7 @@ import VK_ios_sdk
 
 protocol PhotoControllerProtocol {
     var view: PhotoViewProtocol? { get set }
-    func getData(token: String)
+    func getData(token: String, viewController: UIViewController)
     func getAlbums() -> [Album]
     func getOneImageFromAlbum(number: Int) -> String
     func pushToCarousel(viewController: UIViewController, photoNumber: Int)
@@ -25,7 +25,7 @@ class PhotoController: PhotoControllerProtocol {
     private var albums: [Album] = [Album]()
     
     let network = Network()
-    func getData(token: String) {
+    func getData(token: String, viewController: UIViewController) {
         network.request(urlString: createURL(token: token)) { result in
             switch result {
                 
@@ -33,7 +33,7 @@ class PhotoController: PhotoControllerProtocol {
                 self.albums = request.response.items
                 self.view?.updateCollection()
             case .failure(let error):
-                print(error)
+                Alerts.createAlert(viewController: viewController, title: "Download Error", message: error.localizedDescription)
             }
         }
     }

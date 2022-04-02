@@ -26,8 +26,8 @@ class ViewController: UIViewController {
         VKSdk.wakeUpSession(permiss) { state, error in
             if state == .authorized {
                 self.controller.routePhoto(viewController: self)
-            } else if error != nil {
-                print(error)
+            } else if let error = error?.localizedDescription {
+                Alerts.createAlert(viewController: self, title: "Session error", message: error)
             }
         }
     }
@@ -41,7 +41,7 @@ extension ViewController: VKSdkDelegate, VKSdkUIDelegate {
     func vkSdkAccessAuthorizationFinished(with result: VKAuthorizationResult!) {}
 
     func vkSdkUserAuthorizationFailed() {
-        print("FAIL")
+        Alerts.createAlert(viewController: self, title: "Auth Failed", message: "Auth autorization failed")
     }
 
     func vkSdkShouldPresent(_ controller: UIViewController!) {

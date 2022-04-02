@@ -13,7 +13,7 @@ class ModulePhotoCells {
         let controller = PhotoController()
         view.controller = controller
         controller.view = view
-        controller.getData(token: token)
+        controller.getData(token: token, viewController: view)
         return view
     }
 }

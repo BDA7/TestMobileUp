@@ -25,6 +25,7 @@ class CarouselViewController: UIViewController, CarouselViewControllerProtocol {
 
     lazy var photo: UIImageView = {
         let image = UIImageView()
+        image.contentMode = .scaleAspectFit
         return image
     }()
 

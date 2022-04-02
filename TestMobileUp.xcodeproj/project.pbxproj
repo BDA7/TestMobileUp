@@ -10,6 +10,7 @@
 		2C21A3C9832EEF1240A49CC2 /* Pods_TestMobileUp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A23E820A52A9AF898E13B520 /* Pods_TestMobileUp.framework */; };
 		640A2AE527F710DE00B5B2EF /* CarouselCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640A2AE327F710DE00B5B2EF /* CarouselCellCollectionViewCell.swift */; };
 		640A2AE627F710DE00B5B2EF /* CarouselCellCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 640A2AE427F710DE00B5B2EF /* CarouselCellCollectionViewCell.xib */; };
+		640A2AEB27F8309200B5B2EF /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640A2AEA27F8309200B5B2EF /* Alerts.swift */; };
 		642224E027F6F40D00DE0CE8 /* CarouselViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642224DF27F6F40D00DE0CE8 /* CarouselViewController.swift */; };
 		642224E227F6F42300DE0CE8 /* CarouselController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642224E127F6F42300DE0CE8 /* CarouselController.swift */; };
 		642224E427F6F43700DE0CE8 /* CarouselModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642224E327F6F43700DE0CE8 /* CarouselModule.swift */; };
@@ -32,6 +33,7 @@
 /* Begin PBXFileReference section */
 		640A2AE327F710DE00B5B2EF /* CarouselCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		640A2AE427F710DE00B5B2EF /* CarouselCellCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarouselCellCollectionViewCell.xib; sourceTree = "<group>"; };
+		640A2AEA27F8309200B5B2EF /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		642224DF27F6F40D00DE0CE8 /* CarouselViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselViewController.swift; sourceTree = "<group>"; };
 		642224E127F6F42300DE0CE8 /* CarouselController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselController.swift; sourceTree = "<group>"; };
 		642224E327F6F43700DE0CE8 /* CarouselModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselModule.swift; sourceTree = "<group>"; };
@@ -74,6 +76,30 @@
 				A23E820A52A9AF898E13B520 /* Pods_TestMobileUp.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		640A2AE727F8305900B5B2EF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				64851E3927F654C100EC827E /* Models.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		640A2AE827F8306B00B5B2EF /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				64851E3B27F6589700EC827E /* Network.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		640A2AE927F8307C00B5B2EF /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				640A2AEA27F8309200B5B2EF /* Alerts.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		642224DE27F6F3E000DE0CE8 /* CarouselView */ = {
@@ -130,6 +156,9 @@
 		64F17F5827F1CEAA0013B402 /* TestMobileUp */ = {
 			isa = PBXGroup;
 			children = (
+				640A2AE927F8307C00B5B2EF /* Helpers */,
+				640A2AE827F8306B00B5B2EF /* Network */,
+				640A2AE727F8305900B5B2EF /* Model */,
 				642224DE27F6F3E000DE0CE8 /* CarouselView */,
 				64851E2E27F4A61200EC827E /* PhotoView */,
 				64851E2D27F4A60500EC827E /* AuthVIew */,
@@ -139,8 +168,6 @@
 				64F17F6227F1CEAD0013B402 /* Assets.xcassets */,
 				64F17F6427F1CEAD0013B402 /* LaunchScreen.storyboard */,
 				64F17F6727F1CEAD0013B402 /* Info.plist */,
-				64851E3927F654C100EC827E /* Models.swift */,
-				64851E3B27F6589700EC827E /* Network.swift */,
 			);
 			path = TestMobileUp;
 			sourceTree = "<group>";
@@ -272,6 +299,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				642224E027F6F40D00DE0CE8 /* CarouselViewController.swift in Sources */,
+				640A2AEB27F8309200B5B2EF /* Alerts.swift in Sources */,
 				642224E227F6F42300DE0CE8 /* CarouselController.swift in Sources */,
 				64F17F5E27F1CEAA0013B402 /* ViewController.swift in Sources */,
 				64851E3227F4A64200EC827E /* AuthController.swift in Sources */,
